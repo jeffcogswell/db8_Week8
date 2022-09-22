@@ -10,12 +10,12 @@ namespace InstrumentsDemo.Controllers
 			return View();
 		}
 
-		public IActionResult ShowForm()
+		public IActionResult ShowForm() // We got here through a link
 		{
 			return View();
 		}
 
-		public IActionResult Add(Instrument inst)
+		public IActionResult Add(Instrument inst) // The inst instance came in from the form
 		{
 			bool errorFound = false;
 			// Validate 
@@ -35,7 +35,9 @@ namespace InstrumentsDemo.Controllers
 			}
 			else
 			{
-				return View();
+				// Add to the database
+				// But we haven't learned that yet
+				return View(inst);
 			}
 		}
 	}
